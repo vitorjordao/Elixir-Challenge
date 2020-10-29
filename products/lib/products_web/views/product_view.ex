@@ -9,9 +9,16 @@ defmodule ProductsWeb.ProductView do
     %{id: product.product.id}
   end
 
-  def render("products.json", products) do
+  def render("products.json", %{products: products}) do
     IO.inspect products
-    Enum.map products, fn product -> %{id: product.product.id} end
+    Enum.map products, fn product -> %{
+      productId: product.productId,
+      productCategory: product.productCategory,
+      productName: product.productName,
+      productImage: product.productImage,
+      productStock: product.productStock,
+      productPrice: product.productPrice
+      } end
 
   end
 

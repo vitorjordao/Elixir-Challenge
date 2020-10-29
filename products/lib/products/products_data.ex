@@ -17,8 +17,13 @@ defmodule Products.ProductsData do
       [%Product{}, ...]
 
   """
-  def list_products do
-    Repo.all(Product)
+  def list_products page do
+    base = page * 5
+
+    from(p in Product,
+    where: p.id > ^base,
+    limit: 5)
+    |> Repo.all
   end
 
   @doc """
