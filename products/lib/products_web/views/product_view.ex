@@ -10,7 +10,7 @@ defmodule ProductsWeb.ProductView do
   end
 
   def render("products.json", %{products: products}) do
-    IO.inspect products
+
     Enum.map products, fn product -> %{
       productId: product.productId,
       productCategory: product.productCategory,
@@ -24,6 +24,11 @@ defmodule ProductsWeb.ProductView do
 
   def render("show-generic-resp.json", _) do
     %{}
+  end
+
+  def render("error.json", error) do
+    IO.inspect error.error
+    error.error
   end
 
 end

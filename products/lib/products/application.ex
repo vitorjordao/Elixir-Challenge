@@ -14,9 +14,11 @@ defmodule Products.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Products.PubSub},
       # Start the Endpoint (http/https)
-      ProductsWeb.Endpoint
+      ProductsWeb.Endpoint,
       # Start a worker by calling: Products.Worker.start_link(arg)
       # {Products.Worker, arg}
+      Rabbitmq.Consumer,
+      Rabbitmq.Message
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

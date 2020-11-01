@@ -10,8 +10,8 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Passo a passo da criação do BD
+## up
 
 ```
-mix phx.gen.context ProductsData Product products productId:integer productCategory:string productName:string productImage:string productStock:boolean productPrice:string
+docker-compose up
 ```
